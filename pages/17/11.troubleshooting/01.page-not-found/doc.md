@@ -10,10 +10,7 @@ There are a couple of reasons you might receive a **Not Found** error, and they 
 ![404 Not Found](404-not-found.png?classes=shadow)
 
 > [!CAUTION]
-> The examples below are for the Apache Web Server which is the most common server software used.
-
-### IIS use of .htaccess file
-After adding URL Rewrite to the IIS server using the Web Platform Installer, restart the IIS server. Go to the management interface, IIS, double-click on URL Rewrite, under Inbound Rules, click on Import Rules, under Rules to Import, browse to the Configuration file, choosing the .htaccess file in the root, and then click on Import. Restart the IIS server. Access Grav now.
+> Most of the examples below are for the Apache Web Server which is the most common server software used. For IIS or Nginx, please see the [IIS](#iis-use-of-htaccess-file) or [Nginx](#404-page-not-found-on-nginx) sections.
 
 ### Missing .htaccess File
 
@@ -103,8 +100,12 @@ The most common cause of this is simply that the page has been moved or renamed.
 
 Another cause could be your page is **not routable**. The routable option for a page can be set in the [page headers](../../content/headers).
 
+### IIS use of .htaccess file
+
+After adding URL Rewrite to the IIS server using the Web Platform Installer, restart the IIS server. Go to the management interface, IIS, double-click on URL Rewrite, under Inbound Rules, click on Import Rules, under Rules to Import, browse to the Configuration file, choosing the .htaccess file in the root, and then click on Import. Restart the IIS server. Access Grav now.
+
 ### 404 Page Not Found on Nginx
 
 If your site is in a subfolder, make sure your nginx.conf location points to that subfolder. Grav's [sample nginx.conf](https://github.com/getgrav/grav/blob/master/webserver-configs/nginx.conf) has a comment in the code that explains how.
 
- If your homepage works but other pages are not found, make sure your nginx.conf is configured according to sample nginx.conf.
+If your homepage works but other pages are not found, make sure your nginx.conf is configured according to sample nginx.conf.
